@@ -1,0 +1,61 @@
+﻿<UserControl x:Name="tabControlUserControl" x:Class="CloneDataPCApp.Views.TabControlUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CloneDataPCApp.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Template>
+        <ControlTemplate TargetType="{x:Type local:TabControlUserControl}">
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <!--Content-->
+                <Grid Grid.Row="0">
+                    <ContentPresenter  Content="{TemplateBinding Content }" />
+                </Grid>
+                <!--TabControl-->
+                <Grid Grid.Row="1" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="3*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="2*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Column="1" Grid.Row="1" x:Name="tabLayout">
+                        <Border Panel.ZIndex="2" CornerRadius="6" 
+                                 BorderThickness="1" BorderBrush="Beige" 
+                                Background="Transparent">
+                            <ContentPresenter x:Name="TabStrips"  
+                               Content="{TemplateBinding TabStrips }"/>    
+                        </Border>
+                        <Border x:Name="tabControl" CornerRadius="5" 
+                                BorderThickness="1" BorderBrush="Beige" 
+                                Background="Gray"> 
+                            <Border x:Name="selectedTab" CornerRadius="5" 
+                                    BorderThickness="1" BorderBrush="Beige"
+                                    HorizontalAlignment="Left"
+                                    Width="{Binding SelectedTabWidth, ElementName=tabControlUserControl}"
+                                    Background="White" >
+                                <Border.RenderTransform>
+                                    <TranslateTransform x:Name="translate"></TranslateTransform>
+                                </Border.RenderTransform>
+                                <Border Panel.ZIndex="1" x:Name="line" CornerRadius="2"
+                                    Width="30" Height="3" Margin="0,0,0,3"
+                                    Background="Blue" VerticalAlignment="Bottom">
+                                </Border>
+                            </Border>
+                        </Border>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </ControlTemplate>
+    </UserControl.Template>
+</UserControl>

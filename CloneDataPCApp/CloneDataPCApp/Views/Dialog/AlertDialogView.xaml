@@ -1,0 +1,28 @@
+﻿<view:BaseWindow x:Class="CloneDataPCApp.Views.AlertDialogView"
+                 x:TypeArguments="viewmodel:AlertDialogViewModel"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:resource="clr-namespace:CloneDataPCApp.Resources"
+                 xmlns:view="clr-namespace:CloneDataPCApp.Views" 
+                 xmlns:viewmodel="clr-namespace:CloneDataPCApp.ViewModels"
+                 Width="300" SizeToContent="Height">
+
+    <StackPanel Margin="16">
+        <Label Content="{Binding DialogContent}" />
+
+        <Grid Margin="0,16,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="8" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="8" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="8" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="6" Style="{StaticResource NormalButton}" Content="{x:Static resource:AppResources.DialogCancel}"
+                    Command="{Binding ExecuteCommand}" />
+        </Grid>
+    </StackPanel>
+</view:BaseWindow>

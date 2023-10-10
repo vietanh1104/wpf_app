@@ -1,0 +1,58 @@
+﻿<view:BaseWindow x:Class="CloneDataPCApp.Views.HomeView"
+                 x:TypeArguments="viewmodel:HomeViewModel"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:resource="clr-namespace:CloneDataPCApp.Resources"
+                 xmlns:view="clr-namespace:CloneDataPCApp.Views" 
+                 xmlns:viewmodel="clr-namespace:CloneDataPCApp.ViewModels"
+                 Title="{Binding Title}" SizeToContent="WidthAndHeight">
+    <view:LayoutUserControl>
+        <view:LayoutUserControl.Content>
+            <view:TabControlUserControl Grid.ColumnSpan="2">
+                <view:TabControlUserControl.Content>
+                    <StackPanel>
+                        <StackPanel Visibility="Hidden">
+                            <TextBlock Text="this is content 1"></TextBlock>
+                        </StackPanel>
+                        <StackPanel   Visibility="Hidden">
+                            <TextBlock Text="this is content 2"></TextBlock>
+                        </StackPanel>
+                        <StackPanel   Visibility="Hidden">
+                            <TextBlock Text="this is content 3" ></TextBlock>
+                        </StackPanel>
+                    </StackPanel>
+                </view:TabControlUserControl.Content>
+                <view:TabControlUserControl.TabStrips>
+                    <StackPanel Orientation="Horizontal" Background="Transparent" HorizontalAlignment="Center" >
+                        <StackPanel VerticalAlignment="Center">
+                            <TextBlock  Text="tab1" TextAlignment="Center" ></TextBlock>
+                        </StackPanel>
+                        <StackPanel            
+                                VerticalAlignment="Center">
+                            <TextBlock Text="tab2" TextAlignment="Center" ></TextBlock>
+                        </StackPanel>
+                        <StackPanel 
+                                VerticalAlignment="Center">
+                            <TextBlock Text="tab3" TextAlignment="Center" ></TextBlock>         
+                        </StackPanel>
+                        <StackPanel 
+        VerticalAlignment="Center">
+                            <TextBlock Text="tab4" TextAlignment="Center" ></TextBlock>
+                        </StackPanel>
+                    </StackPanel>
+                </view:TabControlUserControl.TabStrips>
+            </view:TabControlUserControl>
+        </view:LayoutUserControl.Content>
+
+        <view:LayoutUserControl.LeftAction>
+            <Button Content="Back" Style="{StaticResource NormalButton}" />
+        </view:LayoutUserControl.LeftAction>
+
+        <view:LayoutUserControl.RightAction>
+            <StackPanel Orientation="Horizontal">
+                <Button Content="FMV" Style="{StaticResource NormalButton}" Margin="0,0,10,0" />
+                <Button Content="Next" Style="{StaticResource ActiveButton}" />
+            </StackPanel>
+        </view:LayoutUserControl.RightAction>
+    </view:LayoutUserControl>
+</view:BaseWindow>
